@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "vite",
+      "preview": "vite preview",``
     "build": "vite build --emptyOutDir",
     "lint": "eslint *.js src/**/*.js",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
@@ -20,6 +21,7 @@
     "prettier": "^3.2.5",
     "vite": "^5.4.7"
   },
+
   "babel": {
     "presets": [
       "@babel/preset-env"
