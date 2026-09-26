@@ -156,21 +156,48 @@ button {
   padding: 1rem;
 }
 
+.product-grid,
 .product-list {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
   list-style-type: none;
   justify-content: center;
 }
 
+.product-grid {
+  align-items: stretch;
+}
+
+.product-grid li,
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-grid a,
 .product-list a {
   text-decoration: none;
   color: var(--dark-grey);
 }
 
+.product-grid a {
+  text-align: center;
+  width: 100%;
+}
+
+.product-grid img,
+.product-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 220px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 /* Styles for product lists */
 .product-card {
-  flex: 1 1 45%;
   margin: 0.25em;
   padding: 0.5em;
   border: 1px solid var(--light-grey);
