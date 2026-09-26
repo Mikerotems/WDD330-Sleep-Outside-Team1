@@ -13,17 +13,21 @@ function productCardTemplate(product) {
     `;
 }
 
-export default class ProductList{
-    constructor(category, datasource, ListElement){
-            this.category = category;
-            this.datasource = datasource;
-            this.ListElement = ListElement;
-    }
-    async init(){
-        const list = await this.datasource.getData();
-        this.renderList(list);
-    }
-    renderList(list) {
+export default class ProductList {
+  constructor(category, datasource, listElement) {
+    this.category = category;
+    this.datasource = datasource;
+    this.listElement = listElement;
+  }
+
+  async init() {
+    const list = await this.datasource.getData(this.category);
+    this.renderList(list);
+    document.querySelector(".title").textContent = this.category;
+
+  }
+
+  renderList(list) {
     renderListWithTemplate(productCardTemplate, this.listElement, list);
   }
 }
